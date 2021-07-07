@@ -4,5 +4,5 @@ COPY requirements.txt requirements.txt
 COPY main.py main.py
 
 RUN pip install -r requirements.txt
-ENTRYPOINT ["start.sh"]
-CMD ["0.0.0.0", "80"]
+ENTRYPOINT ["uvicorn", "main:app", "--reload"]
+CMD ["--host", "0.0.0.0", "--port", "80"]
