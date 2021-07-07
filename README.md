@@ -44,7 +44,7 @@ curl -XGET "http://<host>:<port>/ga4gh/drs/v1/objects/phenotype_csv/access/irods
 
 returns a url and an api-key
 ```
-curl -XGET "<url>" -H "API-KEY: <api-key>"
+curl -XGET "<url>" -H "Authorization: Bearer $token"
 ```
 
 To get genetic data,
