@@ -4,14 +4,11 @@ import secrets
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials, OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.responses import PlainTextResponse, FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from jose import JWTError, jwt
 from typing import Optional
 from datetime import datetime, timedelta 
-
-app = FastAPI()
-
-security = HTTPBasic()
 
 AUTHENTICATION_TOKEN = "mock_irods_athentication_token"
 SECRET_KEY = "111"
@@ -19,6 +16,22 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 10000000000
 API_HOST = os.environ.get("API_HOST", "localhost")
 API_PORT = os.environ.get("API_PORT", "8000")
+
+origins = [
+    "*"
+]
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+security = HTTPBasic()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
