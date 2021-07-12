@@ -88,7 +88,7 @@ objects = {
 
 access = {
     "phenotype_csv": {
-        "url": "http://{API_HOST}:{API_PORT}/irods-rest2/fileStream?path=/devImmcellfieZone/home/test1/study/phenotype.csv",
+        "url": f"http://{API_HOST}:{API_PORT}/irods-rest2/fileStream?path=/devImmcellfieZone/home/test1/study/phenotype.csv",
         "headers": [
             "X-API-KEY iU7Gc3dmeC1ECQ3"
         ]
