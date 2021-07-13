@@ -58,7 +58,7 @@ objects = {
         "contents":[
             {
                 "name":"phenotype.csv",
-                "id":"phonetype_csv",
+                "id":"phenotype_csv",
                 "drs_uri":[
                     "drs://localhost/39e87c10-dbb6-4d45-9e21-1257ea337104"
                 ],
